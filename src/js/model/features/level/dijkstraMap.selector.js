@@ -34,7 +34,6 @@ export const generateMap = ({
         const distance = { [position]: interestLevel };
         let current;
         let neighbors;
-        console.log(distance);
 
         while (frontier.length) {
             current = frontier.shift();

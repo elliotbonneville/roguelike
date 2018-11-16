@@ -48,37 +48,7 @@ export default ({ store }) => {
                         }
                     ]),
                 );
-                const killedRogue = actor.type === 'rogue';
-                const message = (killedRogue)
-                    ? 'The rogue hath been slain. Congrats, you beat the game!'
-                    : 'The adventurer expires, dropping all his sweet swag.';
-                store.dispatch(
-                    log(message, killedRogue ? 'purple' : undefined),
-                );
-                if (killedRogue) setTimeout(
-                    () => {
-                        store.dispatch(win(
-                            'Congrats, you slew the rogue and beat the game!'),
-                        );
-                        store.dispatch(setPaused(true));
-                    },
-                    2000,
-                );
             });
-        }
-
-        if (action.type === ACTOR_LEAVE) {
-            if (action.actor.type === 'rogue') {
-                setTimeout(
-                    () => {
-                        store.dispatch(
-                            lose('You lost: the rogue escaped... at least the good guy won!'),
-                        );
-                        store.dispatch(setPaused(true));
-                    },
-                    2000,
-                );
-            }
         }
 
         if (action.type === CREATE_ACTOR) {

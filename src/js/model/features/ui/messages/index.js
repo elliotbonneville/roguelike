@@ -11,12 +11,4 @@ export const reducers = {
 
 export * as selectors from './selectors';
 
-export const defaultMessages = [
-    {
-        text: 'You suddenly become self-aware.',
-        color: 'purple',
-    },
-    {
-        text: 'An adventurer wanders down your stairs!',
-    },
-];
+export const defaultMessages = [];

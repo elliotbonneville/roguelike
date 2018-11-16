@@ -35,22 +35,9 @@ function init() {
     store.dispatch(
         createLevel({
             seed: Date.now(),
-            levelType: 'plain',
+            levelType: 'grassy plain',
         }),
     );
-
-    const [x, y] = Object.keys(
-        getTilesOfType(store.getState(), { type: 'stairs' }),
-    )[0].split(',');
-    for (let i = 0; i < 1; i++) {
-        store.dispatch(
-            createActor({
-                id: generateId(),
-                actorType: 'adventurer',
-                position: { x, y },
-            }),
-        );
-    }
 
     // start clock
     setInterval(() => store.dispatch(tick()), 500);

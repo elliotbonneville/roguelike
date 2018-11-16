@@ -31,7 +31,6 @@ export default ({ start, state, itinerary, goal }) => {
         },
     );
     const cheapestStep = fastestRouteToWealth[0];
-    console.log(itemDistances);
     const possibleSteps = fastestRouteToWealth.filter(
         step => {
             const [x, y] = step.split(',');

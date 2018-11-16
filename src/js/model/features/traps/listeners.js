@@ -19,7 +19,6 @@ export default ({
         const actor = getActorById(newState, { id: action.id });
         Object.values(traps).forEach((trap) => {
             if (positionsEqual(actor.position, trap.position)) {
-                console.log(trapBehaviors, trap.data.behavior);
                 trapBehaviors[trap.data.behavior]({ actor, store });
             }
         });
