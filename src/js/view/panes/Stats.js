@@ -5,7 +5,6 @@ import Component from '~/view/Component';
 import label from '~/view/label';
 
 import { getValueOfItemsOnFloor } from '~/model/features/items/selectors';
-import { getMana } from '~/model/features/stats/selectors';
 
 export default () => new Pane({
     x: 0,

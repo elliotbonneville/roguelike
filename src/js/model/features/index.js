@@ -4,7 +4,6 @@ import { default as actors } from '~/model/features/actors';
 import { default as time } from '~/model/features/time';
 import { default as items } from '~/model/features/items';
 import { default as traps } from '~/model/features/traps';
-import { default as stats } from '~/model/features/stats';
 import { default as status } from '~/model/features/status';
 
 export const reducers = {
@@ -13,7 +12,6 @@ export const reducers = {
     actors,
     time,
     items,
-    stats,
     traps,
     status,
 };

@@ -4,19 +4,16 @@ import { getActors } from '~/model/features/actors/selectors';
 import { getTick } from '~/model/features/time/selectors';
 
 import tickActors from '~/model/features/actors/tick';
-import tickStats from '~/model/features/stats/tick';
-const tickers = [tickActors, tickStats];
+const tickers = [tickActors];
 
 import trapListeners from '~/model/features/traps/listeners';
 import actorListeners from '~/model/features/actors/listeners';
 import itemListeners from '~/model/features/items/listeners';
-import statsListeners from '~/model/features/stats/listeners';
 
 const featureListeners = [
     actorListeners, 
     itemListeners,
     trapListeners,
-    statsListeners,
 ];
 
 function tick({ store }) {

@@ -7,12 +7,10 @@ import toolTypes from '~/controller/tools/toolTypes';
 import { selectors as mouseSelectors } from '~/model/features/ui/mouse';
 import { selectors as modeSelectors } from '~/model/features/ui/mode';
 import { getTotalValue } from '~/model/features/items/selectors';
-import { getMana } from '~/model/features/stats/selectors';
 
 import log from '~/model/features/ui/messages/log.action';
 
 import createItems from '~/model/features/items/createItems.action';
-import modifyMana from '~/model/features/stats/modifyMana.action';
 
 import itemDefinitions from '~/model/data/items/definitions';
 

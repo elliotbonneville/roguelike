@@ -6,12 +6,10 @@ import toolTypes from '~/controller/tools/toolTypes';
 
 import { selectors as mouseSelectors } from '~/model/features/ui/mouse';
 import { selectors as modeSelectors } from '~/model/features/ui/mode';
-import { getMana } from '~/model/features/stats/selectors';
 
 import log from '~/model/features/ui/messages/log.action';
 
 import createTraps from '~/model/features/traps/createTraps.action';
-import modifyMana from '~/model/features/stats/modifyMana.action';
 
 import trapDefinitions from '~/model/data/traps/definitions';
 

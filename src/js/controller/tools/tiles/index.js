@@ -5,11 +5,9 @@ import toolTypes from '~/controller/tools/toolTypes';
 
 import createTile from '~/model/features/level/createTile';
 import setTiles from '~/model/features/level/setTiles.action';
-import modifyMana from '~/model/features/stats/modifyMana.action';
 
 import log from '~/model/features/ui/messages/log.action';
 import { getTile } from '~/model/features/level/selectors';
-import { getMana } from '~/model/features/stats/selectors';
 
 import { selectors as mouseSelectors } from '~/model/features/ui/mouse';
 import { selectors as modeSelectors } from '~/model/features/ui/mode';

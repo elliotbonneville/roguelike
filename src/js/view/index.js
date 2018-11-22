@@ -3,10 +3,8 @@ import requiredProp from '~/utils/requiredProp';
 import Pane from '~/view/Pane';
 
 // Panes
-import Stats from '~/view/panes/Stats';
 import Messages from '~/view/panes/Messages';
 import Menu from '~/view/panes/Menu';
-import Time from '~/view/panes/Time';
 
 // Components
 import MapView from '~/view/components/data/MapView';
@@ -33,9 +31,6 @@ export default ({
         children: [
             // Panes
             Messages(),
-            Stats(),
-            Menu(store),
-            Time(store),
 
             // Components
             MapView(),
