@@ -5,3 +5,7 @@ export function getStatus(state) {
 export function getGameStatus(state) {
     return getStatus(state).gameStatus;
 }
+
+export function getDebugging(state) {
+    return getStatus(state).debugging;
+}

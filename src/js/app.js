@@ -47,6 +47,13 @@ function destroy() {
     renderer.destroy();
 }
 
-window.game = { destroy, init, renderer, store, view };
+window.game = {
+    debug: controller.debug,
+    destroy,
+    init,
+    renderer,
+    store,
+    view,
+};
 
 init();

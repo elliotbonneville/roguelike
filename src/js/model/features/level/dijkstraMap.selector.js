@@ -9,6 +9,7 @@ import { createSelector } from '~/model/utils';
 import { getTiles } from '~/model/features/level/selectors';
 import { getItemsOnFloor } from '~/model/features/items/selectors';
 import { getTilesOfType } from '~/model/features/level/selectors';
+import { getDebugging } from '~/model/features/status/selectors';
 
 export const getUnassignedDistanceMap = distance => rectangle({
     width: MAP_WIDTH,
@@ -22,6 +23,7 @@ export const generateMap = ({
     pointsOfInterest = requiredProp('pointsOfInterest'),
     tiles = requiredProp('tiles'),
     maxInterest = Infinity,
+    debugging = false,
 }) => {
     const startTime = Date.now();
     const combinedDistances = Object.assign(
@@ -54,7 +56,7 @@ export const generateMap = ({
         }
     });
 
-    if (game.debug) {
+    if (debugging) {
         const time = Date.now() - startTime;
         const points = pointsOfInterest.length;
         console.log(
@@ -67,8 +69,8 @@ export const generateMap = ({
 
 const mapGenerators = {
     items: createSelector(
-        [getTiles, getItemsOnFloor],
-        (tiles, items) => generateMap({
+        [getTiles, getItemsOnFloor, getDebugging],
+        (tiles, items, debugging) => generateMap({
             pointsOfInterest: Object.values(items).map(
                 ({ position, data }) => ({
                     position: cellKey(position),
@@ -77,15 +79,21 @@ const mapGenerators = {
             ),
             maxInterest: 10,
             tiles,
+            debugging,
         }),
     ),
     stairs: createSelector(
-        [getTiles, (state) => getTilesOfType(state, { type: 'stairs' })],
-        (tiles, stairs) => generateMap({
+        [
+            getTiles,
+            (state) => getTilesOfType(state, { type: 'stairs' }),
+            getDebugging,
+        ],
+        (tiles, stairs, debugging) => generateMap({
             pointsOfInterest: Object.entries(stairs).map(
                 ([position]) => ({ position })
             ),
             tiles,
+            debugging,
         }),
     ),
 };

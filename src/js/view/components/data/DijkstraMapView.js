@@ -2,6 +2,7 @@ import DataView from '~/view/components/data/DataView';
 import Cell from '~/view/Cell';
 
 import dijkstraMap from '~/model/features/level/dijkstraMap.selector';
+import { getDebugging } from '~/model/features/status/selectors';
 
 const valueColors = [
     'E50500',
@@ -18,7 +19,7 @@ const valueColors = [
 ];
 
 export default () => DataView({
-    selectStateData: state => (game.debug)
+    selectStateData: state => getDebugging(state)
         ? dijkstraMap({ state, name: 'items' })
         : {},
     renderData: values => Object.entries(values).reduce(

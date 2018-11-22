@@ -11,10 +11,11 @@ import {
 } from '~/model/features/ui/mouse/';
 
 import { selectors as modeSelectors } from '~/model/features/ui/mode';
+import { getDebugging } from '~/model/features/status/selectors';
 
 export default store => new Component({
     x: 0,
-    y: 1,
+    y: 0,
     width: MAP_WIDTH,
     height: MAP_HEIGHT,
     selectState: (state) => ({
@@ -22,6 +23,7 @@ export default store => new Component({
         mousePosition: mouseSelectors.mousePosition(state),
         selectionBounds: rectangle(mouseSelectors.getSelectionBounds(state)),
         activeTool: modeSelectors.getActiveTool(state),
+        debugging: getDebugging(state),
     }),
     mouseListeners: {
         mousedown: [
@@ -56,6 +58,7 @@ export default store => new Component({
         ],
     },
     render() {
+        if (!this.state.debugging) return;
         return this.state.selectionBounds.reduce(
             (cells, { x, y }) => Object.assign(
                 cells,
