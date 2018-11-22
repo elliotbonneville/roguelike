@@ -7,6 +7,20 @@
             }
         },
         {
+            "feature": "borders",
+            "properties": {
+                "type": "wall"
+            }
+        }
+    ],
+    "dungeon": [
+        {
+            "feature": "fill",
+            "properties": {
+                "type": "floor"
+            }
+        },
+        {
             "feature": "noise",
             "properties": {
                 "type": "wall",
@@ -53,20 +67,6 @@
             "properties": {
                 "type": "grass",
                 "noiseLevel": 0.7
-            }
-        }
-    ],
-    "cavern": [
-        {
-            "feature": "fill",
-            "properties": {
-                "type": "floor"
-            }
-        },
-        {
-            "feature": "borders",
-            "properties": {
-                "type": "wall"
             }
         }
     ]

@@ -35,7 +35,7 @@ function init() {
     store.dispatch(
         createLevel({
             seed: Date.now(),
-            levelType: 'grassy plain',
+            levelType: 'plain',
         }),
     );
 
