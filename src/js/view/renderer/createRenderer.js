@@ -35,7 +35,6 @@ const createRenderCells = ({
             lineHeight: `${CELL_HEIGHT}px`,
             paddingLeft: CELL_PADDING_LEFT,
             paddingTop: CELL_PADDING_TOP,
-            cursor: 'pointer',
             userSelect: 'none',
         });
         domNode.appendChild(cell);
